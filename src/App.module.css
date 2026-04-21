@@ -1,0 +1,8 @@
+.app {
+  min-height: 100svh;
+  background-color: var(--color-bg);
+}
+
+.fallback {
+  min-height: 50vh;
+}
