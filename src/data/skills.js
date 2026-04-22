@@ -1,9 +1,11 @@
 import {
   Atom, FileCode, Code2, Triangle, Wind, Layers,
-  Hexagon, Code, FlaskConical, Lock, Zap, Flame, Server, Globe, Terminal,
+  ShoppingBag, Frame, LayoutDashboard,
+  Hexagon, Code, FlaskConical, Lock, Zap, Flame, Server, Globe,
   Smartphone, Braces, Monitor,
   Database, HardDrive, Cloud,
   GitBranch, PenTool, Users, Bot, Layout, Shield,
+  MonitorCheck, TrendingUp,
 } from 'lucide-react';
 
 export const skillCategories = [
@@ -19,6 +21,9 @@ export const skillCategories = [
       { name: 'Angular',     Icon: Triangle,  color: '#dd0031' },
       { name: 'Tailwind',    Icon: Wind,      color: '#06b6d4' },
       { name: 'Next.js',     Icon: Layers,    color: '#e5e5e5' },
+      { name: 'Shopify',     Icon: ShoppingBag, color: '#96bf48' },
+      { name: 'Webflow',     Icon: LayoutDashboard, color: '#4353ff' },
+      { name: 'Framer',      Icon: Frame,     color: '#0066ff' },
     ],
   },
   {
@@ -70,8 +75,10 @@ export const skillCategories = [
       { name: 'Figma',     Icon: PenTool,   color: '#f24e1e' },
       { name: 'WordPress', Icon: Layout,    color: '#21759b' },
       { name: 'Scrum',     Icon: Users,     color: '#4a90e2' },
-      { name: 'Claude',    Icon: Bot,       color: '#cc785c' },
-      { name: 'Fortinet',  Icon: Shield,    color: '#ee3124' },
+      { name: 'Claude',        Icon: Bot,          color: '#cc785c' },
+      { name: 'Fortinet',      Icon: Shield,       color: '#ee3124' },
+      { name: 'Google DevTools', Icon: MonitorCheck, color: '#4285f4' },
+      { name: 'SEO',           Icon: TrendingUp,   color: '#34a853' },
     ],
   },
 ];
