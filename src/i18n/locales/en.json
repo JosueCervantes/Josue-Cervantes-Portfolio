@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "about":    "About",
+    "projects": "Projects",
+    "skills":   "Skills",
+    "contact":  "Contact"
+  },
+  "hero": {
+    "available":    "Available for freelance work",
+    "headline":     "Hi, I'm Josue",
+    "subhead":      "Full Stack Developer",
+    "description":  "Crafting web experiences with modern technologies.\nTransforming ideas into interactive technological solutions.",
+    "cta_primary":  "View My Work",
+    "cta_secondary":"Get In Touch",
+    "tech_label":   "Tech Stack:",
+    "scroll":       "Scroll to explore"
+  },
+  "about": {
+    "label": "About Me",
+    "title": "Full Stack Developer",
+    "bio":   "I'm a passionate software developer building modern web applications. I specialize in creating performant, accessible, and beautiful user interfaces using cutting-edge technologies. I currently work as the IT department coordinator at FIDEAPECH — a state government trust belonging to SIDE (Secretaría de Innovación y Desarrollo Económico) — where I manage software development projects, technical support, data analysis, infrastructure, cybersecurity, automation and operational tasks."
+  },
+  "skills": {
+    "label": "Tech Stack",
+    "title": "Technologies I work with",
+    "categories": {
+      "frontend": "Frontend",
+      "backend":  "Backend",
+      "mobile":   "Mobile",
+      "cloud":    "Database & Cloud",
+      "tools":    "Tools & IT"
+    }
+  },
+  "projects": {
+    "label": "Featured Projects",
+    "title": "My Recent Work",
+    "desc":  "Here are some of the projects I've built recently. As platafide, as forge, as spotlight and tracker are private projects that I can't share too much here, if needed i can explain more about them.",
+    "items": {
+      "platafide":  "Collaborated in the creation and maintenance of an entire internal process platform for FIDEAPECH focused on departmental automation.",
+      "forge":      "Collaborated in the creation of the custom-made framework that serves as the basis for all development projects at FIDEAPECH.",
+      "spotlight":  "I created the FIDEAPECH CRM for managing employees and applicants using Forge.",
+      "cliknow":    "I was part of the Cliknow project where we created virtual assistants and chatbots for companies in Chihuahua.",
+      "tracker":    "I collaborated in the creation of a Jira-like platform for task and ticket management in the IT department at FIDEAPECH.",
+      "sitio":      "I collaborated and was in charge of the continuous updating and improvement of the FIDEAPECH website."
+    }
+  },
+  "contact": {
+    "label":              "Get In Touch",
+    "title":              "Let's Work Together",
+    "desc":               "Have a project in mind?",
+    "name":               "Name",
+    "name_placeholder":   "Your name",
+    "email":              "Email",
+    "message":            "Message",
+    "message_placeholder":"Tell me about your project...",
+    "send":               "Send Message",
+    "sending":            "Sending...",
+    "success":            "✓ Message sent successfully!",
+    "error_fields":       "Please fill in all fields.",
+    "social_title":       "Or connect with me"
+  }
+}

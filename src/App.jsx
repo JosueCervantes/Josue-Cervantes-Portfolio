@@ -5,6 +5,7 @@ import CursorGlow from './components/ui/CursorGlow/CursorGlow';
 import styles from './App.module.css';
 
 const About = lazy(() => import('./sections/About/About'));
+const Skills = lazy(() => import('./sections/Skills/Skills'));
 const Projects = lazy(() => import('./sections/Projects/Projects'));
 const Contact = lazy(() => import('./sections/Contact/Contact'));
 
@@ -21,6 +22,9 @@ export default function App() {
         <Hero />
         <Suspense fallback={<SectionFallback />}>
           <About />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Skills />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <Projects />

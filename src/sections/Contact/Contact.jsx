@@ -1,5 +1,6 @@
 import { useActionState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Code2, Briefcase, MessageCircle, Mail } from 'lucide-react';
 import SectionLabel from '../../components/ui/SectionLabel/SectionLabel';
 import SubmitButton from './SubmitButton';
@@ -21,7 +22,7 @@ async function sendMessageAction(_prevState, formData) {
   const message = formData.get('message')?.toString().trim();
 
   if (!name || !email || !message) {
-    return { ok: false, error: 'Please fill in all fields.' };
+    return { ok: false, errorKey: 'contact.error_fields' };
   }
 
   // TODO: replace with your actual API / EmailJS / Resend call
@@ -31,13 +32,14 @@ async function sendMessageAction(_prevState, formData) {
 }
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [state, formAction] = useActionState(sendMessageAction, null);
 
   return (
     <section id="contact" className={styles.section} aria-label="Contact">
       <div className={styles.container}>
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
-          <SectionLabel>Get In Touch</SectionLabel>
+          <SectionLabel>{t('contact.label')}</SectionLabel>
         </motion.div>
 
         <motion.h2
@@ -47,7 +49,7 @@ export default function Contact() {
           whileInView="visible"
           viewport={viewport}
         >
-          Let&apos;s Work Together
+          {t('contact.title')}
         </motion.h2>
 
         <motion.p
@@ -57,7 +59,7 @@ export default function Contact() {
           whileInView="visible"
           viewport={viewport}
         >
-          Have a project in mind? I&apos;d love to hear about it.
+          {t('contact.desc')}
         </motion.p>
 
         <motion.div
@@ -70,14 +72,12 @@ export default function Contact() {
           {/* Contact form — uses React 19 form Actions */}
           <form action={formAction} className={styles.form} noValidate>
             <div className={styles.field}>
-              <label htmlFor="name" className={styles.label}>
-                Name
-              </label>
+              <label htmlFor="name" className={styles.label}>{t('contact.name')}</label>
               <input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
+                placeholder={t('contact.name_placeholder')}
                 className={styles.input}
                 required
                 autoComplete="name"
@@ -85,9 +85,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="email" className={styles.label}>
-                Email
-              </label>
+              <label htmlFor="email" className={styles.label}>{t('contact.email')}</label>
               <input
                 id="email"
                 name="email"
@@ -100,13 +98,11 @@ export default function Contact() {
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="message" className={styles.label}>
-                Message
-              </label>
+              <label htmlFor="message" className={styles.label}>{t('contact.message')}</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Tell me about your project..."
+                placeholder={t('contact.message_placeholder')}
                 className={styles.textarea}
                 required
                 rows={5}
@@ -115,12 +111,12 @@ export default function Contact() {
 
             {state?.ok && (
               <p className={styles.successMsg} role="status">
-                ✓ Message sent successfully!
+                {t('contact.success')}
               </p>
             )}
-            {state?.error && (
+            {state?.errorKey && (
               <p className={styles.errorMsg} role="alert">
-                {state.error}
+                {t(state.errorKey)}
               </p>
             )}
 
@@ -129,7 +125,7 @@ export default function Contact() {
 
           {/* Social links */}
           <div className={styles.social}>
-            <h3 className={styles.socialTitle}>Or connect with me</h3>
+            <h3 className={styles.socialTitle}>{t('contact.social_title')}</h3>
             <ul className={styles.socialList} role="list">
               {socialLinks.map(({ label, icon, href, text }) => {
                 const Icon = ICON_MAP[icon];

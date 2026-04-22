@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionLabel from '../../components/ui/SectionLabel/SectionLabel';
 import ProjectCard from './ProjectCard';
 import { projects } from '../../data/projects';
@@ -17,11 +18,13 @@ const fadeUp = {
 const viewport = { once: true, margin: '-80px' };
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className={styles.section} aria-label="Featured projects">
       <div className={styles.container}>
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
-          <SectionLabel>Featured Projects</SectionLabel>
+          <SectionLabel>{t('projects.label')}</SectionLabel>
         </motion.div>
 
         <motion.h2
@@ -31,7 +34,7 @@ export default function Projects() {
           whileInView="visible"
           viewport={viewport}
         >
-          My Recent Work
+          {t('projects.title')}
         </motion.h2>
 
         <motion.p
@@ -41,7 +44,7 @@ export default function Projects() {
           whileInView="visible"
           viewport={viewport}
         >
-          Here are some of the projects I&apos;ve built recently
+          {t('projects.desc')}
         </motion.p>
 
         <motion.div
@@ -52,7 +55,11 @@ export default function Projects() {
           viewport={viewport}
         >
           {projects.map(project => (
-            <ProjectCard key={project.id} {...project} />
+            <ProjectCard
+              key={project.id}
+              {...project}
+              description={t(`projects.items.${project.descKey}`)}
+            />
           ))}
         </motion.div>
       </div>

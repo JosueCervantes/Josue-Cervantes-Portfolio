@@ -5,11 +5,18 @@ import { useTilt } from '../../hooks/useTilt';
 import styles from './Projects.module.css';
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 36 },
+  hidden:  { opacity: 0, y: 36 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-export default function ProjectCard({ title, description, tags, gradient, links }) {
+// Diagonal placement for the 3 floating background icons
+const iconPositions = [
+  { left: '14%',  top: '52%', size: 80, opacity: 0.18, rotate: -14 },
+  { left: '50%',  top: '36%', size: 96, opacity: 0.11, rotate:   5 },
+  { left: '82%',  top: '60%', size: 70, opacity: 0.16, rotate:  20 },
+];
+
+export default function ProjectCard({ title, description, tags, gradient, links, image, coverIcons }) {
   const { ref, onMouseMove, onMouseLeave } = useTilt(7);
 
   return (
@@ -20,7 +27,32 @@ export default function ProjectCard({ title, description, tags, gradient, links 
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <div className={styles.cardImg} style={{ background: gradient }} aria-hidden="true" />
+      {/* Visual header */}
+      <div className={styles.cardImg} style={{ background: gradient }} aria-hidden="true">
+        {image ? (
+          <img src={image} alt={title} className={styles.cardImgPhoto} />
+        ) : coverIcons ? (
+          <div className={styles.cardImgIcons}>
+            {coverIcons.map((Icon, i) => {
+              const pos = iconPositions[i] ?? iconPositions[0];
+              return (
+                <Icon
+                  key={i}
+                  size={pos.size}
+                  strokeWidth={1}
+                  className={styles.coverIcon}
+                  style={{
+                    left:      pos.left,
+                    top:       pos.top,
+                    opacity:   pos.opacity,
+                    transform: `translate(-50%, -50%) rotate(${pos.rotate}deg)`,
+                  }}
+                />
+              );
+            })}
+          </div>
+        ) : null}
+      </div>
 
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>

@@ -1,0 +1,126 @@
+.section {
+  padding: var(--space-24) var(--space-8);
+  scroll-margin-top: var(--nav-height);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+/* ── Tabs ───────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-base), border-color var(--transition-base),
+    background var(--transition-base);
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-text);
+  border-color: color-mix(in srgb, var(--tab-color) 50%, transparent);
+}
+
+.tabActive {
+  color: var(--tab-color);
+  border-color: var(--tab-color);
+  background: color-mix(in srgb, var(--tab-color) 12%, transparent);
+}
+
+/* ── Grid ───────────────────────────────────────────────── */
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.grid > * {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+/* ── Skill card ─────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: default;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base),
+    background var(--transition-base);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--skill-color) 60%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--skill-color) 20%, transparent),
+              0 4px 16px rgba(0, 0, 0, 0.3);
+  background: color-mix(in srgb, var(--skill-color) 6%, var(--color-surface));
+}
+
+.iconWrap {
+  color: var(--skill-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--skill-color) 40%, transparent));
+}
+
+.skillName {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .tabs {
+    gap: var(--space-2);
+  }
+
+  .tab {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .grid > * {
+    width: 100px;
+  }
+}

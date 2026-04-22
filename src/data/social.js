@@ -8,19 +8,19 @@ export const socialLinks = [
   {
     label: 'LinkedIn',
     icon: 'linkedin',
-    href: '#',
+    href: 'https://www.linkedin.com/in/josue-cervantes-89b766270',
     text: 'linkedin.com/in/josue-cervantes',
-  },
-  {
-    label: 'Twitter',
-    icon: 'twitter',
-    href: '#',
-    text: '@josuecervantes',
   },
   {
     label: 'Email',
     icon: 'mail',
-    href: 'mailto:hello@josuecervantes.dev',
-    text: 'hello@josuecervantes.dev',
+    href: 'mailto:josuecervantesesparza123@gmail.com',
+    text: 'josuecervantesesparza123@gmail.com',
   },
+  {
+    label: 'Instagram',
+    icon: 'instagram',
+    href: 'https://www.instagram.com/josuedecervantes/',
+    text: '@josuedecervantes',
+  }
 ];

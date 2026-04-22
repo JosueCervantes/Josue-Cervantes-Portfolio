@@ -1,10 +1,80 @@
-import { Atom, FileCode, Hexagon, Database, GitBranch, PenTool } from 'lucide-react';
+import {
+  Atom, FileCode, Code2, Triangle, Wind, Layers,
+  Hexagon, Code, FlaskConical, Lock, Zap, Flame, Server, Globe, Terminal,
+  Smartphone, Braces, Monitor,
+  Database, HardDrive, Cloud,
+  GitBranch, PenTool, Users, Bot, Layout, Shield,
+} from 'lucide-react';
 
-export const skills = [
-  { name: 'React', Icon: Atom, color: 'var(--color-react)' },
-  { name: 'TypeScript', Icon: FileCode, color: 'var(--color-typescript)' },
-  { name: 'Node.js', Icon: Hexagon, color: 'var(--color-node)' },
-  { name: 'PostgreSQL', Icon: Database, color: 'var(--color-postgres)' },
-  { name: 'Git', Icon: GitBranch, color: 'var(--color-git)' },
-  { name: 'Figma', Icon: PenTool, color: 'var(--color-figma)' },
+export const skillCategories = [
+  {
+    id: 'frontend',
+    label: 'Frontend',
+    color: '#61dafb',
+    TabIcon: Monitor,
+    skills: [
+      { name: 'React',       Icon: Atom,      color: '#61dafb' },
+      { name: 'TypeScript',  Icon: FileCode,  color: '#3178c6' },
+      { name: 'JavaScript',  Icon: Code2,     color: '#f7df1e' },
+      { name: 'Angular',     Icon: Triangle,  color: '#dd0031' },
+      { name: 'Tailwind',    Icon: Wind,      color: '#06b6d4' },
+      { name: 'Next.js',     Icon: Layers,    color: '#e5e5e5' },
+    ],
+  },
+  {
+    id: 'backend',
+    label: 'Backend',
+    color: '#68a063',
+    TabIcon: Server,
+    skills: [
+      { name: 'Node.js',  Icon: Hexagon,      color: '#68a063' },
+      { name: 'Python',   Icon: Code,         color: '#3776ab' },
+      { name: 'Flask',    Icon: FlaskConical, color: '#e5e5e5' },
+      { name: 'Django',   Icon: Lock,         color: '#44b78b' },
+      { name: 'FastAPI',  Icon: Zap,          color: '#009688' },
+      { name: 'Laravel',  Icon: Flame,        color: '#ff2d20' },
+      { name: 'Express',  Icon: Server,       color: '#e5e5e5' },
+      { name: 'ASP.NET',  Icon: Globe,        color: '#7b2fbe' },
+    ],
+  },
+  {
+    id: 'mobile',
+    label: 'Mobile',
+    color: '#3ddc84',
+    TabIcon: Smartphone,
+    skills: [
+      { name: 'Flutter',        Icon: Smartphone, color: '#54c5f8' },
+      { name: 'Kotlin',         Icon: Braces,     color: '#7f52ff' },
+      { name: 'Android Studio', Icon: Monitor,    color: '#3ddc84' },
+    ],
+  },
+  {
+    id: 'cloud',
+    label: 'Database & Cloud',
+    color: '#ff9900',
+    TabIcon: Cloud,
+    skills: [
+      { name: 'SQL',      Icon: Database,  color: '#336791' },
+      { name: 'MongoDB',  Icon: HardDrive, color: '#47a248' },
+      { name: 'Firebase', Icon: Flame,     color: '#ffca28' },
+      { name: 'AWS',      Icon: Cloud,     color: '#ff9900' },
+    ],
+  },
+  {
+    id: 'tools',
+    label: 'Tools & IT',
+    color: '#f05032',
+    TabIcon: Users,
+    skills: [
+      { name: 'Git',       Icon: GitBranch, color: '#f05032' },
+      { name: 'Figma',     Icon: PenTool,   color: '#f24e1e' },
+      { name: 'WordPress', Icon: Layout,    color: '#21759b' },
+      { name: 'Scrum',     Icon: Users,     color: '#4a90e2' },
+      { name: 'Claude',    Icon: Bot,       color: '#cc785c' },
+      { name: 'Fortinet',  Icon: Shield,    color: '#ee3124' },
+    ],
+  },
 ];
+
+// Flat list (used only if needed elsewhere)
+export const skills = skillCategories.flatMap(c => c.skills);

@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Button from '../../components/ui/Button/Button';
 import styles from './Hero.module.css';
 
 const TECH_BADGES = [
   { label: 'R', name: 'React', color: 'var(--color-react)' },
-  { label: 'TS', name: 'TypeScript', color: 'var(--color-typescript)' },
+  { label: 'F', name: 'Flask', color: 'var(--color-flask)' },
+  { label: 'P', name: 'Python', color: 'var(--color-node)' },
   { label: 'JS', name: 'JavaScript', color: 'var(--color-javascript)' },
   { label: 'N', name: 'Node.js', color: 'var(--color-node)' },
-  { label: 'TW', name: 'Tailwind', color: 'var(--color-tailwind)' },
 ];
 
 const containerVariants = {
@@ -22,6 +23,8 @@ const itemVariants = {
 };
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section id="hero" className={styles.section} aria-label="Introduction">
       {/* Decorative gradient blobs */}
@@ -49,37 +52,37 @@ export default function Hero() {
         {/* Availability pill */}
         <motion.div className={styles.pill} variants={itemVariants}>
           <span className={styles.pillDot} />
-          <span>Available for freelance work</span>
+          <span>{t('hero.available')}</span>
         </motion.div>
 
         {/* Heading */}
         <motion.h1 className={styles.headline} variants={itemVariants}>
-          Hi, I&apos;m Josue
+          {t('hero.headline')}
         </motion.h1>
 
         <motion.p className={styles.subhead} variants={itemVariants}>
-          React Developer
+          {t('hero.subhead')}
         </motion.p>
 
         <motion.p className={styles.description} variants={itemVariants}>
-          I craft beautiful, performant web experiences with modern technologies.
-          <br />
-          Transforming ideas into pixel-perfect, interactive applications.
+          {t('hero.description').split('\n').map((line, i) => (
+            <span key={i}>{line}{i === 0 && <br />}</span>
+          ))}
         </motion.p>
 
         {/* CTA buttons */}
         <motion.div className={styles.btnRow} variants={itemVariants}>
           <Button variant="primary" as="a" href="#projects">
-            View My Work <ArrowRight size={18} />
+            {t('hero.cta_primary')} <ArrowRight size={18} />
           </Button>
           <Button variant="secondary" as="a" href="#contact">
-            Get In Touch
+            {t('hero.cta_secondary')}
           </Button>
         </motion.div>
 
         {/* Tech stack badges */}
         <motion.div className={styles.techStack} variants={itemVariants}>
-          <span className={styles.techLabel}>Tech Stack:</span>
+          <span className={styles.techLabel}>{t('hero.tech_label')}</span>
           <div className={styles.techIcons}>
             {TECH_BADGES.map(({ label, name, color }) => (
               <div key={name} className={styles.techBadge} title={name} aria-label={name}>
@@ -91,7 +94,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.div className={styles.scrollIndicator} variants={itemVariants} aria-hidden="true">
-          <span>Scroll to explore</span>
+          <span>{t('hero.scroll')}</span>
           <span className={styles.scrollArrow}>↓</span>
         </motion.div>
       </motion.div>

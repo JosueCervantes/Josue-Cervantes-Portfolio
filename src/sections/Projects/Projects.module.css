@@ -24,6 +24,7 @@
   font-size: var(--text-base);
   color: var(--color-text-muted);
   margin-top: calc(-1 * var(--space-4));
+  text-align: center;
 }
 
 /* Grid */
@@ -63,6 +64,29 @@
   width: 100%;
   height: 180px;
   background-color: var(--color-surface-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Real photo (Cliknow, fideapech sitio web) */
+.cardImgPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Floating icon backdrop for projects without screenshots */
+.cardImgIcons {
+  position: absolute;
+  inset: 0;
+}
+
+.coverIcon {
+  position: absolute;
+  color: #ffffff;
+  pointer-events: none;
 }
 
 .cardContent {
