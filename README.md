@@ -1,16 +1,63 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![CI](https://github.com/JosueCervantes/portfolio/actions/workflows/ci.yml/badge.svg)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Currently, two official plugins are available:
+Personal portfolio built with React 19 and Vite — showcasing projects, skills, and professional background.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+| Layer | Technology |
+|-------|-----------|
+| UI | React 19 |
+| Bundler | Vite 8 |
+| Linter | ESLint 9 |
+| CI/CD | GitHub Actions |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── assets/       # Static assets (images, fonts)
+├── App.jsx       # Root component
+├── App.css       # Root styles
+├── main.jsx      # Entry point
+└── index.css     # Global styles
+```
+
+## CI/CD
+
+Every push to `feature/dev` and every pull request targeting `main` runs the full pipeline:
+
+1. **Lint** — ESLint checks for code quality issues
+2. **Build** — Vite production build to catch compile-time errors
+3. **Artifact** — `dist/` is uploaded for 7 days so builds are inspectable
+
+## Branch Strategy
+
+```
+main          ← production-ready, protected
+└── feature/dev  ← active development, merges via PR
+```
+
+## License
+
+MIT

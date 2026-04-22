@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "about":    "Sobre Mí",
+    "projects": "Proyectos",
+    "skills":   "Habilidades",
+    "contact":  "Contacto"
+  },
+  "hero": {
+    "available":    "Disponible para trabajo freelance",
+    "headline":     "Hola, soy Josue",
+    "subhead":      "Desarrollador Full Stack",
+    "description":  "Creando experiencias web con tecnologías modernas.\nTransformando ideas en soluciones tecnológicas interactivas.",
+    "cta_primary":  "Ver Mi Trabajo",
+    "cta_secondary":"Contáctame",
+    "tech_label":   "Stack Tecnológico:",
+    "scroll":       "Desplázate para explorar"
+  },
+  "about": {
+    "label": "Sobre Mí",
+    "title": "Desarrollador Full Stack",
+    "bio":   "Soy un desarrollador de software apasionado en crear aplicaciones web modernas. Me especializo en crear interfaces de usuario de alto rendimiento, accesibles y atractivas usando tecnologías de vanguardia. Actualmente trabajo como coordinador del departamento de TI en FIDEAPECH — un fideicomiso estatal perteneciente a SIDE (Secretaría de Innovación y Desarrollo Económico) — donde gestiono proyectos de desarrollo de software, soporte técnico, análisis de datos, infraestructura, ciberseguridad, automatización y tareas operativas."
+  },
+  "skills": {
+    "label": "Stack Tecnológico",
+    "title": "Tecnologías con las que trabajo",
+    "categories": {
+      "frontend": "Frontend",
+      "backend":  "Backend",
+      "mobile":   "Móvil",
+      "cloud":    "Base de Datos y Nube",
+      "tools":    "Herramientas e IT"
+    }
+  },
+  "projects": {
+    "label": "Proyectos Destacados",
+    "title": "Mi Trabajo Reciente",
+    "desc":  "Aquí algunos de los proyectos que he desarrollado recientemente. Como platafide, forge, spotlight y tracker son proyectos privados que no puedo compartir mucho aquí, si es necesario puedo explicar más sobre ellos.",
+    "items": {
+      "platafide":  "Colaboré en la creación y mantenimiento de una plataforma de procesos internos completa para FIDEAPECH enfocada en la automatización departamental.",
+      "forge":      "Colaboré en la creación del framework personalizado que sirve como base para todos los proyectos de desarrollo en FIDEAPECH.",
+      "spotlight":  "Creé el CRM de FIDEAPECH para la gestión de empleados y solicitantes utilizando Forge.",
+      "cliknow":    "Fui parte del proyecto Cliknow donde creamos asistentes virtuales y chatbots para empresas en Chihuahua.",
+      "tracker":    "Colaboré en la creación de una plataforma similar a Jira para la gestión de tareas y tickets en el departamento de TI de FIDEAPECH.",
+      "sitio":      "Colaboré y estuve a cargo de la actualización y mejora continua del sitio web de FIDEAPECH."
+    }
+  },
+  "contact": {
+    "label":              "Ponte en Contacto",
+    "title":              "Abierto a proyectos freelance",
+    "desc":               "¿Tienes un proyecto en mente? ",
+    "name":               "Nombre",
+    "name_placeholder":   "Tu nombre",
+    "email":              "Correo electrónico",
+    "message":            "Mensaje",
+    "message_placeholder":"Cuéntame sobre tu proyecto...",
+    "send":               "Enviar Mensaje",
+    "sending":            "Enviando...",
+    "success":            "✓ ¡Mensaje enviado exitosamente!",
+    "error_fields":       "Por favor completa todos los campos.",
+    "error_send":         "Algo salió mal. Por favor intenta de nuevo.",
+    "social_title":       "O contáctame en"
+  }
+}
