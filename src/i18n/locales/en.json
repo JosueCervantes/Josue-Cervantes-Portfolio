@@ -57,6 +57,7 @@
     "sending":            "Sending...",
     "success":            "✓ Message sent successfully!",
     "error_fields":       "Please fill in all fields.",
+    "error_send":         "Something went wrong. Please try again.",
     "social_title":       "Or connect with me"
   }
 }

@@ -57,6 +57,7 @@
     "sending":            "Enviando...",
     "success":            "✓ ¡Mensaje enviado exitosamente!",
     "error_fields":       "Por favor completa todos los campos.",
+    "error_send":         "Algo salió mal. Por favor intenta de nuevo.",
     "social_title":       "O contáctame en"
   }
 }

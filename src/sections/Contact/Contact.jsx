@@ -1,6 +1,7 @@
 import { useActionState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import { Code2, Briefcase, MessageCircle, Mail } from 'lucide-react';
 import SectionLabel from '../../components/ui/SectionLabel/SectionLabel';
 import SubmitButton from './SubmitButton';
@@ -25,10 +26,17 @@ async function sendMessageAction(_prevState, formData) {
     return { ok: false, errorKey: 'contact.error_fields' };
   }
 
-  // TODO: replace with your actual API / EmailJS / Resend call
-  await new Promise(resolve => setTimeout(resolve, 900));
-
-  return { ok: true };
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      { from_name: name, from_email: email, message, reply_to: email },
+      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
+    );
+    return { ok: true };
+  } catch {
+    return { ok: false, errorKey: 'contact.error_send' };
+  }
 }
 
 export default function Contact() {

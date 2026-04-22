@@ -57,6 +57,7 @@
     "sending":            "Envoi en cours...",
     "success":            "✓ Message envoyé avec succès !",
     "error_fields":       "Veuillez remplir tous les champs.",
+    "error_send":         "Une erreur s'est produite. Veuillez réessayer.",
     "social_title":       "Ou connectez-vous avec moi"
   }
 }
